@@ -1,0 +1,13 @@
+@import 'variables';
+
+@function font-size($key: md) {
+  @return map-get($font-sizes, $key);
+}
+
+@function color($key: primary) {
+  @return map-get($colors, $key);
+}
+
+@function font-weight($key: normal) {
+  @return map-get($font-weights, $key);
+}

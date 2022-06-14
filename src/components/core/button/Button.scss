@@ -1,0 +1,40 @@
+@import 'SCSS/abstract';
+
+%button {
+  padding: 0.5em 1em;
+
+  font-weight: font-weight(bold);
+
+  border-radius: 0.25em;
+
+  @include bottom-shadow();
+}
+
+.button {
+  display: inline-block;
+  overflow: hidden;
+  position: relative;
+  font-size: font-size();
+
+  border: none;
+  background-color: transparent;
+  outline: none;
+  cursor: pointer;
+
+  &.primary {
+    @extend %button;
+    color: color(white);
+    background-color: color(secondary);
+  }
+  &.secondary {
+    @extend %button;
+    color: color(secondary);
+    background-color: color(white);
+  }
+
+  &.large {
+    width: 100%;
+  }
+
+  @include focus();
+}

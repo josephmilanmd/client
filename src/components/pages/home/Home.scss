@@ -1,0 +1,94 @@
+@import 'SCSS/abstract';
+
+.header {
+  padding: 0.5rem 1rem;
+
+  height: $header-height;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+
+  &__logo {
+    display: inline-block;
+    height: 100%;
+    padding: 0.25rem 0.5rem;
+    background-color: color(white);
+
+    border-radius: 0.25em;
+    overflow: hidden;
+    width: fit-content;
+
+    @include focus();
+
+    img {
+      width: fit-content;
+      height: 100%;
+    }
+  }
+}
+
+.content {
+  position: relative;
+  width: 100%;
+
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+
+  img {
+    padding: 1rem 2rem;
+    display: inline-block;
+
+    object-fit: contain;
+    width: 100%;
+    max-height: calc(100vh - #{$header-height});
+    opacity: 0.5;
+    z-index: -1;
+  }
+
+  &__container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    padding: 2rem;
+
+    position: absolute;
+    top: 50%;
+
+    transform: translateY(-50%);
+
+    max-height: 100%;
+
+    gap: 1.5rem;
+
+    max-width: 20rem;
+
+    &__title {
+      font-size: 2rem;
+      text-align: center;
+      @include text-3d();
+    }
+
+    &__subtitle {
+      font-size: font-size(md);
+      text-align: center;
+      color: color(white);
+      font-weight: font-weight(bold);
+    }
+
+    @include media('<= sm') {
+      max-width: 40rem;
+
+      &__title {
+        font-size: 3rem;
+      }
+    }
+    @include media('>= xs') {
+      transform: translateY(0);
+    }
+  }
+}

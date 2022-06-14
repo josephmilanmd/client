@@ -1,0 +1,32 @@
+$header-height: 3.75rem;
+
+// $side-bar-width: 14rem;
+
+$colors: (
+  primary: #6259cc,
+  secondary: #4cd385,
+  white: #ffffff,
+  black: #000000,
+  gray: gray
+);
+
+$font-sizes: (
+  xxl: 1.75rem,
+  xl: 1.5rem,
+  lg: 1.25rem,
+  md: 1rem,
+  sm: 0.75rem
+);
+
+$font-weights: (
+  normal: 400,
+  bold: 700
+);
+
+$break-points: (
+  xl: 90rem,
+  lg: 80rem,
+  md: 60rem,
+  sm: 40rem,
+  xs: 25rem
+);

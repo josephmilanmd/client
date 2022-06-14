@@ -1,0 +1,60 @@
+@import 'SCSS/abstract';
+@import url('https://fonts.googleapis.com/css2?family=Kanit:wght@400;700&display=swap');
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  font-family: 'Kanit', sans-serif;
+  font-size: font-size();
+  font-weight: font-weight();
+  color: var(--clr-text);
+  background-color: color();
+}
+
+ul[class] {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
+}
+
+span.ripple {
+  position: absolute;
+  background-color: color(black);
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  border-radius: 50%;
+  animation: ripples 2s linear infinite;
+  opacity: 0.2;
+}
+
+@keyframes ripples {
+  0% {
+    width: 0px;
+    height: 0px;
+  }
+  100% {
+    width: 500px;
+    height: 500px;
+  }
+}
+
+.container {
+  @include center-fullscreen();
+}

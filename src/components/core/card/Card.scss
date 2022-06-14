@@ -1,0 +1,11 @@
+@import 'SCSS/abstract';
+
+.card {
+  background-color: color(white);
+
+  width: max-content;
+
+  border-radius: 0.25em;
+
+  @include bottom-shadow();
+}
