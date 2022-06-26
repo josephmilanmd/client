@@ -6,7 +6,7 @@ import Content from './Content';
 const Home = () => {
   return (
     <>
-      <Header />
+      {/* <Header /> */}
       <Content />
     </>
   );

@@ -1,6 +1,6 @@
 @import 'SCSS/abstract';
 
-.login {
+.auth {
   min-width: 25rem;
   padding: 2rem 1rem;
 
@@ -15,5 +15,21 @@
     font-weight: font-weight(bold);
 
     color: color(primary);
+  }
+
+  &__form {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+
+    width: 90%;
+
+    &__button {
+      margin-top: 1.5rem;
+    }
+
+    &__footer {
+      justify-self: center;
+    }
   }
 }

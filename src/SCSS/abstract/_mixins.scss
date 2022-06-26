@@ -21,7 +21,7 @@
 }
 
 @mixin shadow() {
-  box-shadow: 0 0 10px rgba(#000000, 0.35);
+  box-shadow: 0 0 5px rgba(#000000, 0.35);
 }
 
 @mixin transition() {
@@ -36,14 +36,20 @@
   align-items: center;
 }
 
-@mixin focus {
+@mixin focus($type: 'not-button') {
   outline: none;
 
-  // @include transition();
+  @if ($type == 'button') {
+    &:focus-visible {
+      outline: 2px solid color();
+    }
+  } @else {
+    @include transition();
 
-  // &:focus {
-  //   @include shadow();
-  // }
+    &:focus {
+      @include shadow();
+    }
+  }
 }
 
 @mixin text-3d($color: color(white), $shadow: color()) {

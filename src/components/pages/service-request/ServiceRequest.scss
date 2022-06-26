@@ -1,0 +1,94 @@
+@import 'SCSS/abstract';
+
+.service-request {
+  width: 90%;
+
+  padding: 2rem;
+
+  &__header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+
+    color: color();
+    font-size: font-size(xxl);
+
+    margin-bottom: 2rem;
+
+    &__icon {
+      fill: color();
+    }
+  }
+
+  &__list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(25rem, 1fr));
+    gap: 1rem;
+
+    padding: 1rem;
+    max-height: 45rem;
+
+    overflow-y: auto;
+
+    scrollbar-width: thin;
+
+    &::-webkit-scrollbar {
+      width: 0.25rem;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      border-radius: 0.5rem;
+      background-color: #00000034;
+    }
+  }
+}
+
+.request {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 0.5rem;
+
+  width: 100%;
+  padding: 1rem;
+
+  &__header {
+    color: color(secondary);
+    font-size: font-size(lg);
+  }
+
+  &__subheader {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+
+    font-size: font-size(sm);
+    color: color();
+
+    &__item {
+      display: flex;
+      align-items: center;
+
+      gap: 0.25rem;
+
+      &__icon {
+        fill: color();
+      }
+    }
+  }
+
+  &__complaint {
+    margin-block: 1rem;
+  }
+
+  &__choice {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 1rem;
+
+    &__button {
+      font-size: font-size(sm);
+    }
+  }
+}

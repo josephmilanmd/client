@@ -3,6 +3,7 @@ import './Button.scss';
 
 type Props = {
   className?: string;
+  type?: 'button' | 'submit' | 'reset' | undefined;
   color?: 'primary' | 'secondary' | 'no-color';
   size?: 'large' | 'small';
   hasRippleEffect?: boolean;
@@ -12,23 +13,21 @@ type Props = {
 
 const Button = ({
   className = '',
+  type,
   color = 'no-color',
   size = 'small',
   hasRippleEffect = true,
-  // eslint-disable-next-line @typescript-eslint/no-empty-function
-  onClick = () => {},
+  onClick,
   children,
   ...rest
 }: Props & React.HTMLAttributes<HTMLButtonElement>) => {
   const clickEvent = (event: MouseEvent) => {
     if (hasRippleEffect) {
       const currentNode: HTMLButtonElement = event.target as HTMLButtonElement;
-      const parentNode: HTMLElement = currentNode.offsetParent as HTMLElement;
+      // const parentNode: HTMLElement = currentNode.offsetParent as HTMLElement;
 
       const x = currentNode.clientWidth / 2;
       const y = currentNode.clientHeight / 2;
-
-      console.log(event, event.clientY, currentNode.offsetTop, parentNode.offsetTop, y);
 
       const ripple = document.createElement('span');
       ripple.classList.add('ripple');
@@ -42,11 +41,16 @@ const Button = ({
       }, 500);
     }
 
-    onClick();
+    onClick && onClick();
   };
 
   return (
-    <button className={`button ${size} ${color} ${className}`} {...rest} onClick={clickEvent}>
+    <button
+      type={type}
+      className={`button ${size} ${color} ${className}`}
+      {...rest}
+      onClick={clickEvent}
+    >
       {children}
     </button>
   );

@@ -1,0 +1,27 @@
+@import 'SCSS/abstract';
+
+.input {
+  display: inline-flex;
+  flex-direction: column;
+  row-gap: 0.25em;
+
+  font-size: 1rem;
+
+  &__label {
+    font-size: 0.9em;
+    color: color(gray);
+    width: max-content;
+  }
+  input {
+    font-size: 1rem;
+    background: transparent;
+    margin: 0;
+
+    padding: 0.75em 0.5em;
+
+    border: 1px solid color(gray);
+    border-radius: 0.25em;
+
+    @include focus();
+  }
+}
